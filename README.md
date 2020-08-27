@@ -1,4 +1,5 @@
 # MinecraftServerShell For Linux
+[中文][chinese.md]
 A shell for automatic deploying miencraft server and server settings.
 Usage
 Make sure you have installed wget.
