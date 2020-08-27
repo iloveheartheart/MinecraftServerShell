@@ -1,5 +1,5 @@
 # MinecraftServerShell For Linux
-[English][./readme.md]
+[English](./readme.md)
 我的世界服务器一键脚本 集成安装服务器，服务器管理等功能
 使用方法
 请先安装wget
