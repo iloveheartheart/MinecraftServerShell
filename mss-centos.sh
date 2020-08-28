@@ -4,7 +4,7 @@ echo "                        MC一键开服面板 Ubuntu"
 echo "                        Created By idkwhoim"
 echo "    GitHub https://github.com/idkwhoim/MinecraftServerShell"
 echo "                         [1]  安装服务器"
-echo "                         [2]  服务器控制"
+echo "                         [2]  服务器管理"
 echo "                         [3]  服务器设置"
 FREEMEM=`free -m | grep Mem: | awk '{print $7}'`
 SMIN=`expr $FREEMEM / 2`
