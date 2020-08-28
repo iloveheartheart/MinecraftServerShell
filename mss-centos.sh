@@ -28,7 +28,7 @@ if [ $USER=root ]
              wget -P $DIRECTORY https://s3.amazonaws.com/Minecraft.Download/versions/$GAMEVERSION/minecraft_server.$GAMEVERSION.jar -q
              touch eula.txt
              echo "eula=true" >> eula.txt
-             nohup java -Xms$MINMEM\m -Xmx$MAXMEM\m -jar minecraft_server.$GAMEVERSION.jar nogui &>> server.log &
+             nohup java -Xms$MINMEM\m -Xmx$MAXMEM\m -jar $DIRECTORY/minecraft_server.$GAMEVERSION.jar nogui &>> server.log &
              if [ $? -eq 0 ]
                  then echo "服务器开启成功，你可以关闭窗口了"
                  else echo "服务器开启失败!"
@@ -53,7 +53,7 @@ if [ $USER=root ]
                                    ;;
                                esac
                           else if [ $ALLVERSION -eq 0 ]
-                                   then echo "未找到服务端"
+                                   then echo "本目录下未找到服务端"
                                    exit
                                fi
                                read -p "有多个版本 请输入版本:" MULTIVERSION
