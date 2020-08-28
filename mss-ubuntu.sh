@@ -24,8 +24,8 @@ if [ $USER=root ]
              [ -z "$MAXMEM" ] && MAXMEM=$SMAX
              echo "正在下载服务端，请不要操作"
              wget -P $DIRECTORY https://s3.amazonaws.com/Minecraft.Download/versions/$GAMEVERSION/minecraft_server.$GAMEVERSION.jar -q
-             touch eula.txt
-             echo "eula=true" >> eula.txt
+             touch $DIRECTORY\eula.txt
+             echo "eula=true" >> $DIRECTORY\eula.txt
              nohup java -Xms$MINMEM\m -Xmx$MAXMEM\m -jar $DIRECTORY/minecraft_server.$GAMEVERSION.jar nogui &>> server.log &
              if [ $? -eq 0 ]
                  then echo "服务器开启成功，你可以关闭窗口了"
