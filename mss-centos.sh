@@ -6,6 +6,7 @@ echo "    GitHub https://github.com/idkwhoim/MinecraftServerShell"
 echo "                         [1]  安装服务器"
 echo "                         [2]  服务器管理"
 echo "                         [3]  服务器设置"
+echo "                         [4]   查看日志"
 FREEMEM=`free -m | grep Mem: | awk '{print $7}'`
 SMIN=`expr $FREEMEM / 2`
 SMAX=`expr $FREEMEM - 200`
@@ -79,6 +80,13 @@ if [ $USER=root ]
              ;;
          *)
              echo "请输入1-3的字符!"
+             ;;
+         4)
+             cat server.log >> /dev/null
+             if [ $? -eq 1 ]
+                then echo "本目录下未找到日志 请使用cd命令转入服务器安装目录"
+                else cat server.log
+             fi
              ;;
          esac
     else echo "请在root用户下使用本命令! (sudo -i)"
