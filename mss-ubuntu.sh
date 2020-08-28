@@ -17,7 +17,7 @@ if [ $USER=root ]
              FREEMEM=`free -m | grep Mem: | awk '{print $7}'`
              SMIN=`expr $FREEMEM / 2`
              SMAX=`expr $FREEMEM - 200`
-             sudo apt-get install wget java -y
+             sudo apt-get install wget java -y >> /dev/null
              read -p "请输入服务器创建目录(默认本目录)" DIRECTORY
              [ -z "$DIRECTORY" ] && DIRECTORY=`pwd`
              read -p "请输入游戏版本" GAMEVERSION
@@ -25,10 +25,11 @@ if [ $USER=root ]
              [ -z "$MINMEM" ] && MINMEM=$SMIN
              read -p "请输入最大内存(建议内存为$SMAX):" MAXMEM
              [ -z "$MAXMEM" ] && MAXMEM=$SMAX
+             echo "正在下载服务端，请不要操作"
              wget -P $DIRECTORY https://s3.amazonaws.com/Minecraft.Download/versions/$GAMEVERSION/minecraft_server.$GAMEVERSION.jar -q
              touch eula.txt
              echo "eula=true" >> eula.txt
-             nohup java -Xms$MINMEM\m -Xmx$MAXMEM\m -jar minecraft_server.$GAMEVERSION.jar nogui &>> server.log &
+             nohup java -Xms$MINMEM\m -Xmx$MAXMEM\m -jar $DIRECTORY/minecraft_server.$GAMEVERSION.jar nogui &>> server.log &
              if [ $? -eq 0 ]
                  then echo "服务器开启成功，你可以关闭窗口了"
                  else echo "服务器开启失败!"
