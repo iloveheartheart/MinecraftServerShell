@@ -1,8 +1,8 @@
 #!/bin/bash
-echo "                        Minecraft Server Panel"
+echo "                        Minecraft Server Shell"
 echo "                        MC一键开服面板 Ubuntu"
 echo "                        Created By idkwhoim"
-echo "    GitHub https://github.com/idkwhoim/MinecraftServerPanel"
+echo "    GitHub https://github.com/idkwhoim/MinecraftServerShell"
 echo "                         [1]  安装服务器"
 echo "                         [2]  服务器控制"
 echo "                         [3]  服务器设置"
