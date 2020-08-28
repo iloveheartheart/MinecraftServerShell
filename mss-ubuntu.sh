@@ -13,10 +13,7 @@ DIRECTORY=`pwd`
 read -p "请输入您的选项(1-3):" CHOICE1
 if [ $USER=root ]
     then case $CHOICE1 in
-         1)           
-             FREEMEM=`free -m | grep Mem: | awk '{print $7}'`
-             SMIN=`expr $FREEMEM / 2`
-             SMAX=`expr $FREEMEM - 200`
+         1)
              sudo apt-get install wget java -y >> /dev/null
              read -p "请输入服务器创建目录(默认本目录)" DIRECTORY
              [ -z "$DIRECTORY" ] && DIRECTORY=`pwd`
