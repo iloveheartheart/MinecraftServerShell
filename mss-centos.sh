@@ -18,9 +18,9 @@ if [ $USER=root ]
              read -p "请输入服务器创建目录(默认本目录)" DIRECTORY
              [ -z "$DIRECTORY" ] && DIRECTORY=`pwd`
              read -p "请输入游戏版本" GAMEVERSION
-             read -p "请输入最小内存(建议内存为$SMIN):" MINMEM
+             read -p "请输入最小内存(默认建议内存为$SMIN):" MINMEM
              [ -z "$MINMEM" ] && MINMEM=$SMIN
-             read -p "请输入最大内存(建议内存为$SMAX):" MAXMEM
+             read -p "请输入最大内存(默认建议内存为$SMAX):" MAXMEM
              [ -z "$MAXMEM" ] && MAXMEM=$SMAX
              echo "正在下载服务端，请不要操作"
              wget -P $DIRECTORY https://s3.amazonaws.com/Minecraft.Download/versions/$GAMEVERSION/minecraft_server.$GAMEVERSION.jar -q
