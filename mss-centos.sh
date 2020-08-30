@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "                        Minecraft Server Shell"
-echo "                        MC一键开服面板 Ubuntu"
+echo "                        MC一键开服面板 Centos"
 echo "                        Created By idkwhoim"
 echo "    GitHub https://github.com/idkwhoim/MinecraftServerShell"
 echo "                         [1]  安装服务器"
