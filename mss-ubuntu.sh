@@ -34,6 +34,7 @@ if [ $USER=root ]
              echo "eula=true" >> $DIRECTORY/eula.txt
              echo "正在开启服务器"
              nohup java -Xms$MINMEM\m -Xmx$MAXMEM\m -jar $DIRECTORY/minecraft_server.$GAMEVERSION.jar nogui &>> server.log &
+             SERVERPID=`pidof java`
              [ -z "$SERVERPID" ] && echo "服务器开启失败!" || echo "服务器开启成功!"
              ;;
          2) 
