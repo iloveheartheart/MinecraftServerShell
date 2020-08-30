@@ -34,6 +34,7 @@ if [ $USER=root ]
              echo "eula=true" >> $DIRECTORY/eula.txt
              echo "正在开启服务器"
              nohup java -Xms$MINMEM\m -Xmx$MAXMEM\m -jar $DIRECTORY/minecraft_server.$GAMEVERSION.jar nogui &>> server.log &
+             SERVERPID=`pidof java`
              [ -z "$SERVERPID" ] && echo "服务器开启失败!" || echo "服务器开启成功!"
              ;;
          2) 
@@ -48,7 +49,7 @@ if [ $USER=root ]
                                [ -z "$MAXMEM" ] && MAXMEM=$SMAX
                                ALLVERSION=`find $DIRECTORY -name "minecraft_server.*.jar" | wc -l`
                                if [ $ALLVERSION -eq 1 ]
-                                   then nohup java -Xms$MINMEM\m -Xmx$MAXMEM\m -jar $DIRECTORY/minecraft_server.*.jar nogui &>> server.log &
+                                   then nohup java -Xms$MINMEM\m -Xmx$MAXMEM\m -jar $DIRECTORY/minecraft_server.*.jar nogui &>> server.log & 
                                         if [ $? -eq 0 ]
                                             then echo "服务器开启成功，你可以关闭窗口了"
                                             else echo "服务器开启失败!"
